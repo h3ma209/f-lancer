@@ -9,7 +9,7 @@
           v-for="item in items"
           :key="item.icon"
           :class="{ 'font-weight-bold': item.active }"
-          color="primary"
+          color="text"
           text
           :href="item.to"
           target="_blank"
@@ -17,7 +17,11 @@
         >
           {{ item.title }}
         </v-btn>
+        <v-spacer />
       </v-toolbar-items>
+      <v-btn large class="elevation-0 rounded-lg" color="primary">
+        Create account
+      </v-btn>
       <v-spacer />
     </v-app-bar>
   </div>
@@ -37,13 +41,10 @@ export default {
                 },
                 {
                     icon: 'mdi-chart-bubble',
-                    title: 'Login',
-                    to: '/login'
-                },
-                {
-                    title: 'Register',
-                    to: '/register'
+                    title: 'About',
+                    to: '/#about'
                 }
+
             ],
             miniVariant: false,
             right: true,
@@ -56,7 +57,7 @@ export default {
 </script>
 
 <style scoped>
-.v-toolbar__title{
+.v-toolbar__title {
     font-size: 1.5rem !important;
 }
 </style>

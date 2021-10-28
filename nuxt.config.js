@@ -18,6 +18,14 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    scripts: [
+      {
+        src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
+        ssr:false,
+        vmid: 'extscript',
+        callback: () => (this.externalLoaded = true)
+      },
     ]
   },
 
@@ -35,7 +43,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    ['@nuxtjs/eslint-module',{fix:true}],
+    ['@nuxtjs/eslint-module', { fix: true }],
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify'
   ],
@@ -48,8 +56,8 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
-  eslint:{
-    fix:true
+  eslint: {
+    fix: true
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -65,7 +73,8 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: "#B00020",
-          success: colors.green.accent3
+          success: colors.green.accent3,
+          text: '#212a4d'
         }
       }
     }

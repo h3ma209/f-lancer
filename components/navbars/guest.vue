@@ -9,7 +9,9 @@
       style="background:#ffffff"
     >
       <v-spacer />
-      <v-toolbar-title class="primary--text toolbar-title" v-text="title" />
+      <v-toolbar-title class="primary--text toolbar-title">
+        <v-img src="F.svg" />
+      </v-toolbar-title>
       <v-spacer />
       <v-toolbar-items class="ma-14">
         <v-btn
@@ -35,6 +37,7 @@
 </template>
 <script>
 export default {
+
     data () {
         return {
             clipped: false,
@@ -66,5 +69,8 @@ export default {
 <style scoped>
 .v-toolbar__title {
     font-size: 1.5rem !important;
+}
+#logo{
+  max-height: 10px;
 }
 </style>

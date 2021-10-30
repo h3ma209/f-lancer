@@ -1,19 +1,50 @@
 <template>
-  <v-row>
-    <v-col class="text-center">
-      <img
-        src="/v.png"
-        alt="Vuetify.js"
-        class="mb-5"
+  <div class="page">
+    <v-row align="center" justify="center" class="fill-height">
+      <v-col
+        class="d-flex flex-column pa-6 elevation-5 rounded-lg"
+        cols=""
+        md="5"
+        lg="5"
+        xl="5"
+        sm=""
       >
-      <blockquote class="blockquote">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;John Johnson</em>
-          </small>
-        </footer>
-      </blockquote>
-    </v-col>
-  </v-row>
-</template>
+        <div class="text-h3 align-self-center my-7">
+          Login
+        </div>
+        <v-text-field class="px-5" label="Email" prepend-icon="mdi-email" />
+        <v-text-field class="px-5" label="Password" prepend-icon="mdi-lock" />
+        <v-btn color="primary" class=" ma-5 rounded-lg elevation-0">
+          Login
+        </v-btn>
+        <v-row>
+          <v-col>
+            <div class="mx-5 my-2 text-caption text--secondary">
+              Don't have an account ? <br> <a class="text-span font-weight-bold" href="/register">Create an account</a>
+            </div>
+          </v-col>
+          <v-col>
+            <div class="mx-5 my-2 text-caption text--secondary">
+              Forgot your password ? <br> <a class="text-span font-weight-bold" href="/register">Reset password</a>
+            </div>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+  </div>
+</template>s
+
+<script>
+export default {
+    setup () {
+
+    }
+}
+</script>
+
+<style scoped>
+.page {
+    width: 100%;
+    color: #212a4d;
+}
+</style>

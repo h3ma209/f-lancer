@@ -38,7 +38,7 @@
                   <v-col cols="3" class="d-none d-sm-flex">
                     <span>Follow us</span>
                   </v-col>
-                  <v-col lg="6" md="6">
+                  <v-col lg="6" md="6" sm="5">
                     <v-row no-gutters class="sm-icons">
                       <v-col>
                         <v-btn outlined icon class="rounded-lg pa-5">
@@ -63,7 +63,7 @@
               </v-col>
             </v-row>
           </v-col>
-          <v-col v-show="!$vuetify.breakpoint.xs" class="d-xs-none" />
+          <v-col v-show="!$vuetify.breakpoint.xs" class="d-sm-none d-md-none d-lg-flex" />
         </v-row>
       </div>
     </div>
@@ -86,7 +86,7 @@
               <v-icon>{{ items.icon }}</v-icon>
             </v-btn>
 
-            <div class="mt-5 text-h5 text-md-h5 font-weight-normal text--secondary" style="max-width:60%;">
+            <div class="mt-5 text-h5 text-md-h5 font-weight-normal text--secondary">
               {{ items.title }}
             </div>
           </v-card>
@@ -209,7 +209,6 @@ export default {
 }
 .jobs .v-card .v-btn:hover {
     background: #212a4d;
-    transform: translateY(-20px);
 }
 .jobs .v-card .v-icon {
     font-size: 50px;
@@ -218,7 +217,6 @@ export default {
 .login-register {
     height: 100%;
     width: 100%;
-
 }
 
 .login-register .col {
@@ -229,29 +227,29 @@ export default {
 .login-register .btn {
     border-radius: 0px;
     background-color: white;
-    color: #03DAC6;
+    color: #03dac6;
     height: 86px;
     width: 200px;
     font-size: 35px;
     position: relative;
     top: 200px;
-    border: 4.2px solid #03DAC6;
+    border: 4.2px solid #03dac6;
     transition: all 0.4s ease;
 }
 
 #tt-login.change-bg {
-    background-color: #03DAC6;
+    background-color: #03dac6;
 }
 
 #tt-register.change-bg {
-    background-color: #03DAC6;
+    background-color: #03dac6;
 }
 .ibtn.circle-btn {
     height: 200px;
     border-radius: 50%;
     position: relative;
     top: 150px;
-    color: #03DAC6;
+    color: #03dac6;
     background-color: white;
     border: 4.2px solid white;
 }
@@ -261,12 +259,12 @@ export default {
     border-radius: 50%;
     position: relative;
     top: 150px;
-    color: #03DAC6;
+    color: #03dac6;
     background-color: white;
     border: 4.2px solid white;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .landing {
     }
     .landing .overlay {

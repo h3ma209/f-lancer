@@ -1,6 +1,13 @@
 <template>
   <div>
-    <v-app-bar :clipped-left="clipped" fixed flat app style="background:#ffffff">
+    <v-app-bar
+      v-if="!$vuetify.breakpoint.xs"
+      :clipped-left="clipped"
+      fixed
+      flat
+      app
+      style="background:#ffffff"
+    >
       <v-spacer />
       <v-toolbar-title class="primary--text toolbar-title" v-text="title" />
       <v-spacer />

@@ -1,7 +1,8 @@
 <template>
   <v-app dark>
     <v-main>
-      <guestBar v-if="!logged" />
+      <guestBar v-if="!logged && !$vuetify.breakpoint.xs" />
+      <mobileBar v-else-if="$vuetify.breakpoint.xs" />
       <!-- <loggedBar v-else-if="logged"> -->
       <v-container class="fill-height ma-0 pa-0" fluid>
         <nuxt />
@@ -16,11 +17,13 @@
 
 <script>
 import guestBar from '../components/navbars/guest.vue'
+import mobileBar from '../components/navbars/mobile/mobile.vue'
 // import loggedBar from '../components/navbars/logged.vue'
 
 export default {
     components: {
-        guestBar
+        guestBar,
+        mobileBar
         // loggedBar
     },
     data () {

@@ -53,6 +53,7 @@ export default {
                 data: this.creds
             })
             alert(this.creds.email)
+            console.log(this.$auth.loggedIn)
         }
     }
 }

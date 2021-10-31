@@ -35,3 +35,13 @@ exports.postLogin = async (req, res, next) => {
         next(err);
     }
 };
+
+exports.getUser = (req, res, next) => {
+    res.status(200).json({
+      user: {
+        id: loadedUser._id,
+        fullname: loadedUser.fullname,
+        email: loadedUser.email,
+      },
+    });
+  };

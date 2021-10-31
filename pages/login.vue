@@ -12,9 +12,9 @@
         <div class="text-h3 align-self-center my-7">
           Login
         </div>
-        <v-text-field class="px-5" label="Email" prepend-icon="mdi-email" />
-        <v-text-field class="px-5" label="Password" prepend-icon="mdi-lock" />
-        <v-btn color="primary" class=" ma-5 rounded-lg elevation-0">
+        <v-text-field v-model="creds.email" class="px-5" label="Email" prepend-icon="mdi-email" />
+        <v-text-field v-model="creds.password" class="px-5" label="Password" prepend-icon="mdi-lock" />
+        <v-btn color="primary" class=" ma-5 rounded-lg elevation-0" @click="submitForm()">
           Login
         </v-btn>
         <v-row>
@@ -32,12 +32,28 @@
       </v-col>
     </v-row>
   </div>
-</template>s
+</template>
 
 <script>
 export default {
     setup () {
 
+    },
+    data () {
+        return {
+            creds: {
+                email: 'j@j.com',
+                password: 'test'
+            }
+        }
+    },
+    methods: {
+        submitForm () {
+            this.$auth.loginWith('local', {
+                data: this.creds
+            })
+            alert(this.creds.email)
+        }
     }
 }
 </script>

@@ -2,12 +2,13 @@
   <div>
     <v-app-bar elevate-on-scroll fixed color="white" class="px-2">
       <v-app-bar-nav-icon @click="drawer = true" />
-      <v-toolbar-title class="primary--text">
-        {{ title }}
-      </v-toolbar-title>
+      <!-- <v-toolbar-title class="primary--text toolbar-title">
+        <v-img src="F.svg" max-height="40" max-width="60" contain />
+      </v-toolbar-title> -->
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" absolute temporary class="pa-4">
+      <v-img src="F.svg" max-height="40" max-width="60" contain class="my-7" />
       <v-list nav dense>
         <v-list-item-group v-model="group" active-class="primary--text text--accent-4">
           <v-list-item v-for="item,i in items" :key="i">

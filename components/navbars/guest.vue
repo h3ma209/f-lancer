@@ -10,7 +10,13 @@
     >
       <v-spacer />
       <v-toolbar-title class="primary--text toolbar-title">
-        <v-img src="F.svg" />
+        <v-img src="F.svg" max-height="40" contain />
+        <div v-if="$auth.loggedIn">
+          <h1>logged in</h1>
+        </div>
+        <div v-else>
+          <h1>not logged in</h1>
+        </div>
       </v-toolbar-title>
       <v-spacer />
       <v-toolbar-items class="ma-14">
@@ -53,6 +59,11 @@ export default {
                     icon: 'mdi-chart-bubble',
                     title: 'About',
                     to: '/#about'
+                },
+                {
+                    icon: 'mdi-lock',
+                    title: 'Login',
+                    to: '/login'
                 }
 
             ],

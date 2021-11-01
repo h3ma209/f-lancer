@@ -11,12 +11,12 @@
       <v-spacer />
       <v-toolbar-title class="primary--text toolbar-title">
         <v-img src="F.svg" max-height="40" contain />
-        <div v-if="$auth.loggedIn">
+        <!-- <div v-if="$auth.loggedIn">
           <h1>logged in</h1>
         </div>
         <div v-else>
           <h1>not logged in</h1>
-        </div>
+        </div> -->
       </v-toolbar-title>
       <v-spacer />
       <v-toolbar-items class="ma-14">

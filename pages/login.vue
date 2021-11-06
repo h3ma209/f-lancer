@@ -1,13 +1,14 @@
 <template>
-  <div class="page">
+  <div class="page fill-height">
     <v-row align="center" justify="center" class="fill-height">
       <v-col
-        class="d-flex flex-column pa-6 elevation-5 rounded-lg"
+        class="d-flex flex-column pa-6 elevation-1 rounded-lg"
         cols=""
         md="5"
         lg="5"
         xl="5"
         sm=""
+        style="background:white"
       >
         <div class="text-h3 align-self-center my-7">
           Login
@@ -36,6 +37,7 @@
 
 <script>
 export default {
+    name: 'Login',
     setup () {
 
     },
@@ -44,16 +46,29 @@ export default {
             creds: {
                 email: 'j@j.com',
                 password: 'test'
-            }
+            },
+            errorMsg: ''
+        }
+    },
+    created () {
+        if (this.$auth.loggedIn) {
+            this.$router.push('/profile')
         }
     },
     methods: {
-        submitForm () {
-            this.$auth.loginWith('local', {
-                data: this.creds
-            })
-            alert(this.creds.email)
-            console.log(this.$auth.loggedIn)
+
+        async submitForm () {
+            try {
+                const resp = await this.$auth.loginWith('local', {
+                    data: this.creds,
+                    callbackUrl: '/profile'
+                })
+                if (resp.status === 200) {
+                    this.$router.push('/profile')
+                }
+            } catch (e) {
+
+            }
         }
     }
 }
@@ -61,7 +76,16 @@ export default {
 
 <style scoped>
 .page {
+    height: 100vh;
     width: 100%;
     color: #212a4d;
+    background-image: url("/login-background.svg");
+    background-position: bottom;
+    background-size: cover;
+}
+.alert {
+    position: fixed;
+    bottom: 5vh;
+    right: 5vh;
 }
 </style>

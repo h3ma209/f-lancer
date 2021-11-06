@@ -119,6 +119,7 @@ import jquery from 'jquery'
 // B000020 error
 
 export default {
+    name: 'Index',
     data () {
         return {
             city: '',

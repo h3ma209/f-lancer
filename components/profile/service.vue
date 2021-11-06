@@ -1,25 +1,27 @@
 <template>
-  <v-card :loading="loading" class="mx-auto my-12" max-width="374">
+  <v-card :loading="loading" class="rounded-lg my-6" max-width="450">
     <template slot="progress">
-      <v-progress-linear color="deep-purple" height="10" indeterminate />
+      <v-progress-linear color="secondary" height="10" indeterminate />
     </template>
 
-    <v-img height="250" :src="image" />
+    <v-img height="200" :src="image" />
 
-    <v-card-title>{{ title }}</v-card-title>
+    <v-card-title class="">
+      {{ title }}
+    </v-card-title>
 
-    <v-card-text>
+    <v-card-text class="">
       <v-row align="center" class="mx-0">
         <v-rating
-          value="4.5"
+          :value="stars/orders"
           color="amber"
           dense
           half-increments
           readonly
           size="14"
         />
-        <div class="grey--text ms-4">
-          4.5 (413)
+        <div class="grey--text ">
+          {{ stars/orders }} ({{ orders }})
         </div>
       </v-row>
       <div class="my-4 text-subtitle-1">
@@ -36,8 +38,8 @@
       </v-chip-group>
     </v-card-text>
 
-    <v-card-actions>
-      <v-btn color="teal lighten-2" @click="reserve">
+    <v-card-actions class="pb-6 px-4">
+      <v-btn text color="teal lighten-2 white--text" @click="reserve">
         Check out
       </v-btn>
     </v-card-actions>

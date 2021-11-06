@@ -22,7 +22,7 @@ export default {
     scripts: [
       {
         src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
-        ssr:false,
+        ssr: false,
         vmid: 'extscript',
         callback: () => (this.externalLoaded = true)
       },
@@ -53,7 +53,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
-    
+    '@nuxtjs/toast',
+
   ],
 
   // Auth stuff here
@@ -64,8 +65,8 @@ export default {
         token: {
           property: 'token',
           global: true,
-          // required: true,
-          // type: 'Bearer'
+          required: true,
+          type: 'Bearer'
         },
         user: {
           property: 'user',
@@ -73,19 +74,34 @@ export default {
         },
         endpoints: {
           login: { url: '/auth/login', method: 'post', porpertyName: 'token' },
-          logout: { url: '/auth/logout', method: 'post' },
+          logout: false,
           user: { url: '/auth/user', method: 'get' }
         }
       }
-    }
+    },
+    redirect: false
   }
   ,
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL:'http://localhost:8081/api',
+    baseURL: 'http://localhost:8081/api',
   },
   eslint: {
     fix: true
+  },
+
+  toast: {
+    position: 'bottom-right',
+
+    register: [ // Register custom toasts
+      {
+        name: 'my-error',
+        message: 'Oops...Something went wrong',
+        options: {
+          type: 'error'
+        }
+      }
+    ]
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -97,7 +113,7 @@ export default {
         light: {
           primary: "#03DAC6",
           accent: '#2a9d8f',
-          secondary: '#018786',
+          secondary: '#212a4d',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: "#B00020",

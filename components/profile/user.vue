@@ -33,7 +33,7 @@
       </div>
       <div class="user-info">
         <div class="text-h5 my-3">
-          Jack Dorsey
+          {{ $auth.user.name }}
         </div>
         <div class="my-3">
           <div class="text--primary text-caption">
@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="d-flex flex-row align-center justify-center">
-          <v-rating hover length="5" size="20" value="3" />
+          <v-rating readonly length="5" size="20" value="3" />
           <div class="text-caption text-center">
             (300)
           </div>

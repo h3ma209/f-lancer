@@ -5,6 +5,7 @@
       <mobileBar v-else-if="$vuetify.breakpoint.xs" />
       <!-- <loggedBar v-else-if="logged"> -->
       <v-container class="fill-height ma-0 pa-0" fluid>
+        <Notification />
         <nuxt />
       </v-container>
     </v-main>
@@ -16,14 +17,16 @@
 </template>
 
 <script>
-import guestBar from '../components/navbars/guest.vue'
+import guestBar from '../components/navbars/NavBtn.vue'
 import mobileBar from '../components/navbars/mobile/mobile.vue'
+import Notification from '../components/Notification.vue'
 // import loggedBar from '../components/navbars/logged.vue'
 
 export default {
     components: {
         guestBar,
-        mobileBar
+        mobileBar,
+        Notification
         // loggedBar
     },
     data () {

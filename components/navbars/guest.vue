@@ -27,15 +27,18 @@
           color="text"
           text
           :href="item.to"
-          target="_blank"
+
           :title="item.title"
         >
           {{ item.title }}
         </v-btn>
         <v-spacer />
       </v-toolbar-items>
-      <v-btn large class="elevation-0 rounded-lg" color="primary">
+      <v-btn v-if="!$auth.loggedIn" large class="elevation-0 rounded-lg" color="primary">
         Create account
+      </v-btn>
+      <v-btn v-if="$auth.loggedIn" outlined color="primary" @click="logout()">
+        Logout
       </v-btn>
       <v-spacer />
     </v-app-bar>
@@ -72,6 +75,11 @@ export default {
             rightDrawer: false,
             title: 'F Lancer',
             username: 'hema'
+        }
+    },
+    methods: {
+        logout () {
+            this.$auth.logout().then(this.$router.push('/login'))
         }
     }
 }

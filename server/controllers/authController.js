@@ -16,10 +16,15 @@ exports.postLogin = async (req, res, next) => {
             throw error;
         }
         loadedUser = user;
-        console.log(user)
-        const comparePassword = bcrypt.compare(password, user.password);
-
+        // console.log(user)
+        const comparePassword = await bcrypt.compare(password, user.password);
+        console.log('---------------------------------------')
+        console.log(password)
+        console.log(user.password)
+        console.log(comparePassword)
+        console.log('---------------------------------------')
         if (!comparePassword) {
+            
             const error = new Error("password is not match!");
             error.statusCode = 401;
             throw error;
@@ -37,11 +42,17 @@ exports.postLogin = async (req, res, next) => {
 };
 
 exports.getUser = (req, res, next) => {
-    res.status(200).json({
-      user: {
-        id: loadedUser._id,
-        fullname: loadedUser.fullname,
-        email: loadedUser.email,
-      },
-    });
-  };
+    
+    if (jwt.verify(req.headers.authorization.split(' ')[1],"expressnuxtsecret")) {
+        res.status(200).json({
+            user: {
+                id: loadedUser._id,
+                name: loadedUser.name,
+                email: loadedUser.email,
+            },
+        });
+    }
+    else{
+        res.status(401)
+    }
+};

@@ -1,18 +1,38 @@
 <template>
   <div class="alert">
-    <v-alert type="success" dismissible>
-      this is test
-    </v-alert>
-    <v-alert type="info" dismissible>
-      this is test
+    <v-alert v-for="notification,i in nots" :key="i" :type="notification.type" dismissible @click="rmNots(i)">
+      {{ notification.msg }}
     </v-alert>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
+
 export default {
     setup () {
 
+    },
+    data () {
+        return {
+            // nots: [{ msg: 'test', type: 'error' }]
+        }
+    },
+    created () {
+
+    },
+    methods: {
+        ...mapMutations(['addNotification', 'removeNotification']),
+        ...mapGetters(['getNotification']),
+        rmNots (i) {
+            // console.log('removing ' + i)
+            this.removeNotification(i)
+        }
+    },
+    computed: {
+        nots () {
+            return this.getNotification()
+        }
     }
 }
 </script>

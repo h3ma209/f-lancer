@@ -1,6 +1,6 @@
 export const state = () => ({
     name: '',
-    userId: ''
+    notifications: []
 })
 
 export const getters = {
@@ -9,6 +9,9 @@ export const getters = {
     },
     getUserId (state) {
         return state.userId
+    },
+    getNotification (state) {
+        return state.notifications
     }
 }
 
@@ -18,6 +21,12 @@ export const mutations = {
     },
     setUserId (state, userId) {
         state.userId = userId
+    },
+    addNotification (state, noti) {
+        state.notifications.push(noti)
+    },
+    removeNotification (state, id) {
+        state.notifications.splice(id, 0)
     }
 }
 

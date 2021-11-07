@@ -85,6 +85,7 @@ export default {
 
     },
     middleware: 'isAuth',
+
     setup () {
 
     }

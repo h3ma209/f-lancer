@@ -20,6 +20,7 @@
 import guestBar from '../components/navbars/NavBtn.vue'
 import mobileBar from '../components/navbars/mobile/mobile.vue'
 import Notification from '../components/Notification.vue'
+
 // import loggedBar from '../components/navbars/logged.vue'
 
 export default {

@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
     name: 'Login',
     setup () {
@@ -56,6 +58,7 @@ export default {
         }
     },
     methods: {
+        ...mapMutations(['addNotification']),
 
         async submitForm () {
             try {
@@ -67,7 +70,7 @@ export default {
                     this.$router.push('/profile')
                 }
             } catch (e) {
-
+                this.addNotification({ msg: 'invalid email and password', type: 'error' })
             }
         }
     }

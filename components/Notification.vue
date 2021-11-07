@@ -24,5 +24,6 @@ export default {
     bottom: 5vh;
     right: 5vh;
     z-index: 99999;
+    transition: all 0.4s ease;
 }
 </style>

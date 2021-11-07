@@ -1,6 +1,6 @@
 <template>
   <div class="alert">
-    <v-alert v-for="notification,i in nots" :key="i" :type="notification.type" dismissible @click="rmNots(i)">
+    <v-alert v-for="notification,i in nots.slice(Math.max(nots.length - 6, 0))" :key="i" :type="notification.type" dismissible @click="rmNots(i)">
       {{ notification.msg }}
     </v-alert>
   </div>
@@ -40,10 +40,13 @@ export default {
 <style scoped>
 
 .alert {
+    max-height: 80%;
+    background: pink;
     position: fixed;
     bottom: 5vh;
     right: 5vh;
     z-index: 99999;
     transition: all 0.4s ease;
+    overflow: hidden;
 }
 </style>

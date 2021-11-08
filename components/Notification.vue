@@ -18,8 +18,10 @@ export default {
             // nots: [{ msg: 'test', type: 'error' }]
         }
     },
-    created () {
-
+    computed: {
+        nots () {
+            return this.getNotification()
+        }
     },
     methods: {
         ...mapMutations(['addNotification', 'removeNotification']),
@@ -28,12 +30,8 @@ export default {
             // console.log('removing ' + i)
             this.removeNotification(i)
         }
-    },
-    computed: {
-        nots () {
-            return this.getNotification()
-        }
     }
+
 }
 </script>
 
@@ -41,7 +39,7 @@ export default {
 
 .alert {
     max-height: 80%;
-    background: pink;
+
     position: fixed;
     bottom: 5vh;
     right: 5vh;

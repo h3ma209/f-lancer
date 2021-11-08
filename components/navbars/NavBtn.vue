@@ -5,8 +5,19 @@
     </div>
     <div class="contents" :class="{active:isClicked}">
       <v-list class="pa-5">
-        <v-list-item-group>
-          <v-list-item v-for="item,i in links" :key="i">
+        <v-list-item-group v-if="!$auth.loggedIn">
+          <v-list-item v-for="item,i in links.notLoggedIn" :key="i">
+            <v-list-item-content class="px-5" @click="isClicked = !isClicked">
+              <div class="link my-3 text-h2 text-left">
+                <nuxt-link text :to="item.link">
+                  {{ i+1 }}. {{ item.title }}
+                </nuxt-link>
+              </div>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+        <v-list-item-group v-else>
+          <v-list-item v-for="item,i in links.logged" :key="i">
             <v-list-item-content class="px-5" @click="isClicked = !isClicked">
               <div class="link text-h2 text-left">
                 <nuxt-link text :to="item.link">
@@ -26,13 +37,21 @@ export default {
     data () {
         return {
             isClicked: false,
-            links: [
-                { title: 'Home', link: '/' },
-                { title: 'Login', link: '/login' },
-                { title: 'Register', link: '/' },
-                { title: 'Profile', link: '/profile' },
-                { title: 'Logout', link: '/logout' }
-            ]
+
+            links: {
+                notLoggedIn: [
+                    { title: 'Home', link: '/' },
+                    { title: 'Login', link: '/login' },
+                    { title: 'Register', link: '/' }
+                ],
+                logged: [
+
+                    { title: 'Profile', link: '/profile' },
+                    { title: 'Search', link: '/services/search' },
+                    { title: 'Logout', link: '/logout' }
+                ]
+            }
+
         }
     }
 }

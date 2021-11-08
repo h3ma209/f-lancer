@@ -6,6 +6,7 @@ const morgan = require('morgan');
 
 
 const authRouter = require('./routes/routes')
+const serviceRouter = require('./routes/serviceRouter')
 
 const app = express();
 
@@ -32,6 +33,9 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/auth/', authRouter);
+app.use('/api/search',serviceRouter)
+
+
 
 app.get('/api', (req, res) => {
     console.log(req.query.id);

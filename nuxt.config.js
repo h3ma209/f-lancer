@@ -57,6 +57,11 @@ export default {
 
   ],
 
+  static: {
+    prefix: false
+  },
+  
+
   // Auth stuff here
 
   auth: {

@@ -47,6 +47,7 @@ exports.getUser = (req, res) => {
             id: loadedUser._id,
             name: loadedUser.name,
             email: loadedUser.email,
+            password: loadedUser.password
         },
     });
 };

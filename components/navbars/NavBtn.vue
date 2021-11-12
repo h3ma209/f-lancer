@@ -1,7 +1,7 @@
 <template>
   <div class="menu pa-6 " :class="{active:isClicked,'rounded-circle':!isClicked}">
     <div class="btn-container rounded-circle elevation-3" @click="isClicked = !isClicked">
-      <v-img class="btn-icon" src="F.svg" max-height="40" contain />
+      <v-img class="btn-icon" src="../F.svg" max-height="40" contain />
     </div>
     <div class="contents" :class="{active:isClicked}">
       <v-list class="pa-5">

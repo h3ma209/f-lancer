@@ -53,7 +53,7 @@
       <v-text-field :value="dtEmail" label="E-mail" required />
       <v-text-field :value="dtPassword" label="Password" />
       <div class="ma-5" />
-      <v-btn :disabled="!valid || !edit" color="success" class="mr-4">
+      <v-btn :disabled="!valid || !edit" color="primary" class="mr-4">
         Save
       </v-btn>
       <v-btn color="error" class="mr-4" :disabled="!edit">

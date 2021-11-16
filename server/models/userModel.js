@@ -15,6 +15,20 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    city: {
+      type: String,
+      required: true,
+    },
+    skills: {
+      type: Array,
+      required: true,
+    },
+    imgLink: {
+      type: String,
+      required: false,
+    },
+
+
   },
   { timestamps: true }
 );

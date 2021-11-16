@@ -42,7 +42,7 @@ export default {
                 notLoggedIn: [
                     { title: 'Home', link: '/' },
                     { title: 'Login', link: '/login' },
-                    { title: 'Register', link: '/' }
+                    { title: 'Register', link: '/register' }
                 ],
                 logged: [
 

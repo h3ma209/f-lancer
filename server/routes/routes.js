@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken');
 
 // router.post("/signin", authController.postSignin);
 router.post("/login", authController.postLogin);
+router.post('/create/user',authController.postRegister);
+
 router.get("/user", isAuthenticated, authController.getUser);
 router.get('/search/all',serviceController.allServices);
 

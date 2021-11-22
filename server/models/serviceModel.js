@@ -22,6 +22,10 @@ const ServiceSchema = new Schema({
         type: String,
         required: true
     },
+    owner:{
+        type: mongoose.Schema.ObjectId,
+        required:true,
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Service', ServiceSchema)

@@ -5,11 +5,19 @@ const serviceController = require('../controllers/serviceController');
 const jwt = require('jsonwebtoken');
 
 // router.post("/signin", authController.postSignin);
-router.post("/login", authController.postLogin);
-router.post('/create/user',authController.postRegister);
 
+// user routes
+router.post("/login", authController.postLogin);
+router.post('/user/create',authController.postRegister);
 router.get("/user", isAuthenticated, authController.getUser);
-router.get('/search/all',serviceController.allServices);
+
+
+// services routes
+router.get('/services/search/all',serviceController.allServices);
+// get back the current session user services
+router.get('/services/search/user',serviceController.allServices);
+router.delete('/services/delete/:id',serviceController.deleteServiceById);
+router.post('/services/create',serviceController.createService);
 
 
 

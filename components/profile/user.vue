@@ -17,8 +17,8 @@
                 max-height="150"
                 outlined
                 max-width="150"
-                contain
-                src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTgxMTA3NjcxMzM0NjU5MTYw/gettyimages-1146354927.jpg"
+
+                :src="$auth.user.imgLink"
               />
             </div>
           </v-col>
@@ -40,10 +40,10 @@
             <v-icon size="20" color="primary">
               mdi-map-marker
             </v-icon>
-            Cali, San francisco
+            {{ $auth.user.city }}, KU
           </div>
           <div class="text-caption">
-            UI/UX designer
+            {{ $auth.user.skills.join(', ') }}
           </div>
         </div>
         <div class="d-flex flex-row align-center justify-center">

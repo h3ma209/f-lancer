@@ -148,6 +148,7 @@ export default {
 <style scoped>
 .page {
     width: 100%;
+    height: 100%;
     color: #212a4d;
 }
 .whitespace {

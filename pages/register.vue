@@ -154,7 +154,7 @@ export default {
         },
         async createAccount () {
             try {
-                const resp = await this.$axios.post('/auth/create/user', this.form)
+                const resp = await this.$axios.post('/auth/user/create', this.form)
                 if (resp.status === 200) {
                     this.step = 3
                     this.addNotification({ msg: 'User created successfuly', type: 'success' })

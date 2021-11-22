@@ -1,21 +1,30 @@
 <template>
-  <v-row class="">
-    <v-col v-for="i in 4" :key="i" cols="6">
-      <Service
-        title="Cafe Badilico"
-        orders="20"
-        stars="43"
-        link="youtube.com"
-        price="43"
-        description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam nisi maxime velit a labore optio omnis. Officiis atque ut expedita dolorem facere tempora placeat repellendus non libero incidunt. Sapiente, accusantium."
-        :tags="['nodejs', 'front-end','vuetify']"
-        image="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-      />
-    </v-col>
-  </v-row>
+  <div>
+    <v-row v-if="loading">
+      <v-col v-for="i in 4" :key="i" cols="6">
+        <v-skeleton-loader class="mx-auto pa-2 elevation-2" max-width="450" type="card-avatar, article, actions" />
+      </v-col>
+    </v-row>
+    <v-row v-else class="">
+      <v-col v-for="s,i in services" :key="i" cols="6">
+        <Service
+          :title="s.title"
+          orders="20"
+          stars="43"
+          link="youtube.com"
+          :price="s.price"
+          :description="s.description"
+          :tags="s.tags"
+          :image="s.img"
+        />
+      </v-col>
+    </v-row>
+  </div>
 </template>
 <script>
+import { mapMutations } from 'vuex'
 import Service from '../profile/service.vue'
+
 export default {
     components: {
         Service
@@ -24,13 +33,32 @@ export default {
         return {
             services: {
 
+            },
+            loading: true
+        }
+    },
+    mounted () {
+        this.getData()
+    },
+    methods: {
+        ...mapMutations(['addNotification']),
+
+        async getData () {
+            try {
+                const resp = await this.$axios.get('/auth/services/search/user', { owner: this.$auth.user._id })
+                if (resp.status === 200) {
+                    this.loading = false
+                    this.services = resp.data
+                }
+            } catch (e) {
+                this.addNotification({ msg: e.response.data.error, type: 'error' })
+                // this.loading = false
             }
         }
     }
 
 }
 </script>
-
 <style scoped>
 * {
     transition: all 0.2s ease-in-out;
@@ -38,5 +66,4 @@ export default {
 .profile-container {
     width: 100%;
 }
-
 </style>

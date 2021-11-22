@@ -45,8 +45,8 @@ export default {
                     { title: 'Register', link: '/register' }
                 ],
                 logged: [
-
                     { title: 'Profile', link: '/profile' },
+                    { title: 'Dashboard', link: '/dashboard' },
                     { title: 'Search', link: '/services/search' },
                     { title: 'Logout', link: '/logout' }
                 ]

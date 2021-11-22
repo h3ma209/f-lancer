@@ -73,11 +73,11 @@ export default {
             valid: false,
             loading: false,
             form: {
-                title: 'lorem ipsum',
-                imgLink: 'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-                price: 10,
-                tags: ['web developer'],
-                description: 'lorem ipsum dolor amet'
+                title: '',
+                imgLink: '',
+                price: 0.0,
+                tags: [],
+                description: ''
             },
             professions: ['web developer', 'ui/ux designer', 'backend developer'],
 
@@ -112,11 +112,11 @@ export default {
         resetValidation () {
             this.$refs.form.resetValidation()
             this.form = {
-                title: 'lorem ipsum',
-                imgLink: 'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-                price: 10,
-                tags: ['web developer'],
-                description: 'lorem ipsum dolor amet'
+                title: '',
+                imgLink: '',
+                price: 0.0,
+                tags: [],
+                description: ''
             }
         },
         async createService () {

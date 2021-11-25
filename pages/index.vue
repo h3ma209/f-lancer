@@ -72,7 +72,7 @@
       <h1 class="px-10 mx-12 mb-8">
         Search By Category
       </h1>
-      <v-row align="center" justify="center" class="fill-height job-types ">
+      <v-row align="center" justify="center" class="job-types ">
         <v-col
           v-for="items,i in job_types"
           :key="i"
@@ -94,6 +94,21 @@
       </v-row>
     </div>
     <div class="whitespace" />
+    <div class="about-us py-14">
+      <v-row align="center">
+        <v-col lg="6">
+          <div class="text-left mx-12 px-12">
+            <h1 class="mb-8">
+              About Us
+            </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium placeat quae tempore, temporibus totam quos sequi consectetur!</p>
+          </div>
+        </v-col>
+        <v-col lg="5" justify-self="center">
+          <v-img class="rounded-lg" src="https://images.pexels.com/photos/6583354/pexels-photo-6583354.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" height="500" />
+        </v-col>
+      </v-row>
+    </div>
     <div class="whitespace" />
     <div class="login-register">
       <v-row class="ma-0 pa-0">
@@ -109,6 +124,7 @@
         </v-col>
       </v-row>
     </div>
+    <div class="whitespace" />
   </div>
 </template>
 
@@ -147,12 +163,13 @@ export default {
 
 <style scoped>
 .page {
-    width: 100%;
     height: 100%;
+    width: 100%;
     color: #212a4d;
+
 }
 .whitespace {
-    height: 25vh;
+    height: 30vh;
 }
 .landing {
     height: 100vh;
@@ -195,8 +212,7 @@ export default {
 }
 /* jobbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb */
 .jobs {
-    height: 50vh;
-    background: white;
+
 }
 .jobs h1 {
     font-size: 55px;
@@ -215,9 +231,18 @@ export default {
 .jobs .v-card .v-icon {
     font-size: 50px;
 }
+/* about usssssssssssssssssssssssssssssssssss */
+.about-us{
+    background: rgba(237, 243, 245, 1);
+    height: 100vh;
+}
+.about-us h1 {
+    max-width: 50%;
+    font-size: 55px;
+}
 /* loginnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn */
 .login-register {
-    height: 100%;
+
     width: 100%;
 }
 
@@ -290,7 +315,7 @@ export default {
     .landing .overlay .follow-us button:hover {
     }
     .jobs {
-        height: 100%;
+
     }
     .jobs h1 {
         font-size: 40px;

@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="whitespace" />
-    <div class="stats-container d-lg-none">
+    <div class="stats-container d-lg-none" style="display:none">
       <Cont>
         <v-row no-gutters class="">
           <v-col cols="2" class="">
@@ -38,7 +38,7 @@
           Services
         </div>
         <v-row class="">
-          <v-col v-for="i in 4" :key="i" cols="4">
+          <v-col v-for="i in 4" :key="i" lg="4" sm="5">
             <Service
               title="Cafe Badilico"
               orders="20"
@@ -60,7 +60,7 @@
           Reviews
         </div>
         <v-row align="center" class="my-8">
-          <v-col v-for="i in 5" :key="i" cols="4">
+          <v-col v-for="i in 5" :key="i" lg="4" sm="5">
             <Review />
           </v-col>
         </v-row>

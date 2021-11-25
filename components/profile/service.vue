@@ -1,5 +1,5 @@
 <template>
-  <v-card :loading="loading" class="rounded-lg my-6" max-width="450" min-width="400">
+  <v-card :loading="loading" class="rounded-lg my-6" max-width="450">
     <template slot="progress">
       <v-progress-linear color="secondary" height="10" indeterminate />
     </template>

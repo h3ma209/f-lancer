@@ -10,12 +10,26 @@
     <v-navigation-drawer v-model="drawer" absolute temporary class="pa-4">
       <v-img src="F.svg" max-height="40" max-width="60" contain class="my-7" />
       <v-list nav dense>
-        <v-list-item-group v-model="group" active-class="primary--text text--accent-4">
-          <v-list-item v-for="item,i in items" :key="i">
-            <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+        <v-list-item-group v-if="!$auth.loggedIn">
+          <v-list-item v-for="item,i in links.notLoggedIn" :key="i">
+            <v-list-item-content @click="isClicked = !isClicked">
+              <div class="text-left">
+                <nuxt-link text :to="item.link">
+                  {{ i+1 }}. {{ item.title }}
+                </nuxt-link>
+              </div>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+        <v-list-item-group v-else>
+          <v-list-item v-for="item,i in links.logged" :key="i">
+            <v-list-item-content @click="isClicked = !isClicked">
+              <div class="text-left">
+                <nuxt-link text :to="item.link">
+                  {{ i+1 }}. {{ item.title }}
+                </nuxt-link>
+              </div>
+            </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -28,21 +42,22 @@ export default {
     data () {
         return {
             clipped: false,
+            group: 0,
             drawer: false,
             fixed: false,
-            items: [
-                {
-                    icon: 'mdi-home',
-                    title: 'Welcome',
-                    to: '/'
-                },
-                {
-                    icon: 'mdi-chart-bubble',
-                    title: 'About',
-                    to: '/#about'
-                }
-
-            ],
+            links: {
+                notLoggedIn: [
+                    { title: 'Home', link: '/' },
+                    { title: 'Login', link: '/login' },
+                    { title: 'Register', link: '/register' }
+                ],
+                logged: [
+                    { title: 'Profile', link: '/profile' },
+                    { title: 'Dashboard', link: '/dashboard' },
+                    { title: 'Search', link: '/services/search' },
+                    { title: 'Logout', link: '/logout' }
+                ]
+            },
             miniVariant: false,
             right: true,
             rightDrawer: false,

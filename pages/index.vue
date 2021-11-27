@@ -104,8 +104,8 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium placeat quae tempore, temporibus totam quos sequi consectetur!</p>
           </div>
         </v-col>
-        <v-col lg="5" justify-self="center">
-          <v-img class="rounded-lg" src="https://images.pexels.com/photos/6583354/pexels-photo-6583354.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" height="500" />
+        <v-col lg="5" justify-self="center" class="px-8">
+          <v-img class="rounded-lg " src="https://images.pexels.com/photos/6583354/pexels-photo-6583354.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" height="500" />
         </v-col>
       </v-row>
     </div>
@@ -113,14 +113,14 @@
     <div class="login-register">
       <v-row class="ma-0 pa-0">
         <v-col id="tt-login" class="col" @mouseenter="ChangeBg('#tt-login','.ibtn')" @mouseleave="RevertBg('#tt-login','.ibtn')">
-          <button type="button" class="btn btn btn-primary ibtn">
+          <v-btn to="/login" type="button" class="btn btn btn-primary ibtn elevation-0">
             Login
-          </button>
+          </v-btn>
         </v-col>
         <v-col id="tt-register" class="col" @mouseenter="ChangeBg('#tt-register','.rbtn')" @mouseleave="RevertBg('#tt-register','.rbtn')">
-          <button type="button" class="btn btn-primary rbtn">
+          <v-btn to="/register" type="button" class="btn btn-primary rbtn  elevation-0">
             Register
-          </button>
+          </v-btn>
         </v-col>
       </v-row>
     </div>
@@ -168,8 +168,13 @@ export default {
     color: #212a4d;
 
 }
+p{
+  font-size: 25px;
+  font-weight: 300;
+}
 .whitespace {
     height: 30vh;
+
 }
 .landing {
     height: 100vh;
@@ -234,7 +239,7 @@ export default {
 /* about usssssssssssssssssssssssssssssssssss */
 .about-us{
     background: rgba(237, 243, 245, 1);
-    height: 100vh;
+
 }
 .about-us h1 {
     max-width: 50%;
@@ -257,7 +262,7 @@ export default {
     color: #03dac6;
     height: 86px;
     width: 200px;
-    font-size: 35px;
+    font-size: 25px;
     position: relative;
     top: 200px;
     border: 4.2px solid #03dac6;

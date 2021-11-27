@@ -2,7 +2,7 @@
   <div class="page">
     <div class="register-container d-flex flex-column align-center justify-center">
       <v-form ref="form" v-model="valid" lazy-validation>
-        <v-card class="rounded-lg pa-2" width="600">
+        <v-card class="rounded-lg pa-2" max-width="700" :min-width="$vuetify.breakpoint.md ? 600 : '20vw'">
           <v-card-title class="text-h6 font-weight-regular justify-space-between">
             <span>{{ currentTitle }}</span>
             <v-avatar color="primary " class="subheading white--text" size="24" v-text="step" />

@@ -9,7 +9,7 @@
       </div> -->
       <div class="search elevation-2 pa-7 rounded-xl mt-14  ">
         <v-row>
-          <v-col>
+          <v-col lg="" cols="12">
             <v-text-field v-model="form.search" prepend-icon="mdi-magnify" label="Search" />
           </v-col>
           <v-col class="d-none d-sm-flex">
@@ -24,7 +24,7 @@
               single-line
             />
           </v-col>
-          <v-col cols="3" class="d-flex flex-column align-center justify-center ">
+          <v-col lg="3" cols="12" class="d-flex flex-column align-center justify-center ">
             <v-btn x-large color="primary" class="rounded-lg elevation-0" @click="search()">
               Search
             </v-btn>
@@ -73,7 +73,7 @@ export default {
         }
     },
     created () {
-
+        this.search()
     },
     methods: {
         async search () {

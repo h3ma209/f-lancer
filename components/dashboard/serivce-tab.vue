@@ -5,8 +5,8 @@
         <v-skeleton-loader class="mx-auto pa-2 elevation-2" max-width="450" type="card-avatar, article, actions" />
       </v-col>
     </v-row>
-    <v-row v-else class="">
-      <v-col v-for="s,i in services" :key="i" cols="6">
+    <v-row v-else class="" align="center" justify="center">
+      <v-col v-for="s,i in services" :key="i" cols="8" lg="6">
         <Service
           :title="s.title"
           orders="20"

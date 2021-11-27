@@ -1,24 +1,24 @@
 <template>
-  <v-card class="elevation-2 d-flex flex-column align-center justify-center pa-10">
+  <v-card class="elevation-2 d-flex flex-column align-center justify-center pa-10 rounded-lg">
     <div class="create-service-container">
       <div class="text-h4 mb-10">
         Create Service
       </div>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-row>
-          <v-col cols="5">
+          <v-col cols="12" md="5" sm="7">
             <v-text-field v-model="form.title" :loading="loading" :rules="rules.title" label="Title" />
             <div class="text-caption">
               Title for your service
             </div>
           </v-col>
-          <v-col cols="5">
+          <v-col cols="12" md="5" sm="7">
             <v-text-field v-model="form.imgLink" :loading="loading" :rules="rules.imgLink" label="Link" />
             <div class="text-caption">
               Image link for your service
             </div>
           </v-col>
-          <v-col cols="5">
+          <v-col cols="12" md="5" sm="7">
             <v-text-field
               v-model="form.price"
               :loading="loading"
@@ -31,7 +31,7 @@
               Price of your service
             </div>
           </v-col>
-          <v-col cols="5">
+          <v-col cols="12" md="5" sm="7">
             <v-autocomplete
               v-model="form.tags"
               :loading="loading"
@@ -46,7 +46,7 @@
               Tags related to your service
             </div>
           </v-col>
-          <v-col cols="8">
+          <v-col cols="12">
             <v-textarea v-model="form.description" :loading="loading" :rules="rules.description" label="Description" rows="2" />
             <div class="text-caption">
               More info about your service

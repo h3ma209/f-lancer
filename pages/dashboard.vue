@@ -1,12 +1,12 @@
 <template>
   <div class="page fill-height d-flex align-center justify-center">
     <v-row no-gutters class="fill-height">
-      <v-col class="left" lg="3">
-        <v-card tile class="pa-6 fill-height">
+      <v-col class="left" lg="3" sm="4">
+        <v-card tile class="pa-6 fill-height elevation-0">
           <v-list>
             <v-list-item>
               <v-list-item-avatar>
-                <v-img src="https://cdn.vuetifyjs.com/images/john.png" />
+                <v-img :src="$auth.user.imgLink" />
               </v-list-item-avatar>
             </v-list-item>
 
@@ -92,8 +92,10 @@ import ServiceTab from '../components/dashboard/serivce-tab.vue'
 import Cont from '../components/Container.vue'
 import CreateService from '../components/dashboard/create-service-tab.vue'
 import DeleteService from '../components/dashboard/delete-service-tab.vue'
+
 export default {
     components: {
+
         'profile-tab': ProfileTab,
         'service-tab': ServiceTab,
         Cont,
@@ -103,9 +105,9 @@ export default {
     data: () => ({
         selectedItem: 0,
         items: [
-            { text: 'My profile', icon: 'mdi-account', compName: 'profile-tab' },
+            { text: 'My profile', icon: 'mdi-account', compName: 'profile-tab' }
             // { text: 'Services', icon: 'mdi-star', compName: 'service-tab' },/
-            { text: 'Stats', icon: 'mdi-file-percent', compName: 'stat-tab' }
+            // { text: 'Stats', icon: 'mdi-file-percent', compName: 'stat-tab' }
             // { text: 'Setting', icon: 'mdi-cog', compName: 'setting-tab' }
         ],
         component: 'profile-tab'
@@ -121,9 +123,7 @@ export default {
     color: #212a4d;
 }
 .left {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+
 }
 .right {
     overflow-y: visible;

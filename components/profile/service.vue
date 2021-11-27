@@ -1,5 +1,5 @@
 <template>
-  <v-card :loading="loading" class="rounded-lg my-6" max-width="450">
+  <v-card :loading="loading" class="rounded-lg my-6" max-width="450" :min-width="$vuetify.breakpoint.lg ? 450 : '20vh'">
     <template slot="progress">
       <v-progress-linear color="secondary" height="10" indeterminate />
     </template>

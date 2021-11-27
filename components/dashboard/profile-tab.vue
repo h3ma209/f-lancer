@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-10 d-flex flex-column align-center justify-center elevation-2" width="600">
+  <v-card class="rounded-lg pa-10 d-flex flex-column align-center justify-center elevation-2" max-width="600" :min-width="$vuetify.breakpoint.lg ? 600 : '20vh'">
     <v-dialog v-model="dialog" max-width="400">
       <v-card>
         <v-card-title class="text-h5">

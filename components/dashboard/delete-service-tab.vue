@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row align="center" justify="center">
     <v-dialog v-model="dialog" persistent max-width="290">
       <v-card>
         <v-card-title class="text-h5">
@@ -17,8 +17,8 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <v-col v-for="serv,i in services" :key="i" cols="6">
-      <v-card :loading="loading" class="rounded-lg my-6" max-width="450" min-width="400">
+    <v-col v-for="serv,i in services" :key="i" lg="6" cols="8">
+      <v-card :loading="loading" class="rounded-lg my-6" max-width="450">
         <template slot="progress">
           <v-progress-linear color="secondary" height="10" indeterminate />
         </template>
